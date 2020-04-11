@@ -16,10 +16,7 @@ Scraper is a a web app that lets users view and leave comments on the latest new
 - templating engine: handlebars
 - database: MongoDB
 
-## Contributing
 
-If you'd like to contribute, please fork the repository and use a feature
-branch. Pull requests are warmly welcome.
 
 ## Links
 
