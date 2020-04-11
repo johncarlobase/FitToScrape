@@ -8,10 +8,11 @@ $(document).ready(function() {
   $(document).on("click", ".scrape-new", handleArticleScrape);
   $(".clear").on("click", handleArticleClear);
 
-  function initPage() {
+  
     // Run an AJAX request for any unsaved headlines
-    $.get("/api/headlines?saved=false").then(function(data) {
-
+   $.get("/api/headlines?saved=false").then(function(data) {
+   
+      
       articleContainer.empty();
       // If we have headlines, render them to the page
       if (data && data.length) {
@@ -21,12 +22,13 @@ $(document).ready(function() {
         renderEmpty();
       }
     });
-  }
+  
 
   function renderArticles(articles) {
     // This function handles appending HTML containing our article data to the page
     // We are passed an array of JSON containing all available articles in our database
     var articleCards = [];
+    console.log("ARTICLE CARDS!",articleCards);
     // We pass each article JSON object to the createCard function which returns a bootstrap
     // card with our article data inside
     for (var i = 0; i < articles.length; i++) {
@@ -67,14 +69,14 @@ $(document).ready(function() {
     var emptyAlert = $(
       [
         "<div class='alert alert-warning text-center'>",
-        "<h4>Uh Oh. Looks like we don't have any new articles.</h4>",
+        "<h4>Uh So sorry but would you believe we ran out of articles today??</h4>",
         "</div>",
         "<div class='card'>",
         "<div class='card-header text-center'>",
-        "<h3>What Would You Like To Do?</h3>",
+        "<h3>What have you been doing in Quarantine?</h3>",
         "</div>",
         "<div class='card-body text-center'>",
-        "<h4><a class='scrape-new'>Try Scraping New Articles</a></h4>",
+        "<h4><a class='scrape-new'>Tell you what, right on top, click on 'Scrape New Articles'</a></h4>",
         "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
         "</div>",
         "</div>"

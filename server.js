@@ -3,7 +3,7 @@ var express    = require('express'),
     exphbs     = require('express-handlebars'),
     logger     = require("morgan");
 
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 5050;
 
 // Initialize Express
 var app = express();

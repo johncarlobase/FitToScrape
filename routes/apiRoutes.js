@@ -12,6 +12,7 @@ module.exports = function (app) {
   // home page
   app.get('/', function (req, res) {
     db.Article.find({saved: false}, function(err, data){
+      console.log(data);
       res.render('home', { home: true, article : data });
     })
   });
@@ -25,7 +26,7 @@ module.exports = function (app) {
 
   // save article to database by changed saved field to true
   app.put("/api/headlines/:id", function(req, res){
-    var saved = req.body.saved == 'true'
+    var saved = req.params.saved == 'true'
     if(saved){
       db.Article.updateOne({_id: req.body._id},{$set: {saved:true}}, function(err, result){
       if (err) {
@@ -63,7 +64,7 @@ module.exports = function (app) {
       // Save an empty result object
       var result = {};
       result.headline = $(element).find("h2").text().trim();
-      result.url = 'https://www.nytimes.com' + $(element).find("a").attr("href");
+      result.url = 'https://www.nytimes.com/section/health' + $(element).find("a").attr("href");
       result.summary = $(element).find("p").text().trim();
 
       if (result.headline !== '' && result.summary !== ''){

@@ -7,24 +7,25 @@
     <div class="card-header">
       <h3>
         <a class="article-link" target="_blank" rel="noopener noreferrer" href={{this.url}}>{{this.headline}}</a>
-        <a class="btn btn-success save">Save Article</a>
+        <a class="btn btn-success save">Save Article Now Na!</a>
       </h3>
     </div>
     <div class="card-body">{{this.summary}}</div>
   </div>
   {{/each}}
 </div>
+
 {{else}}
   <div class='alert alert-warning text-center'>
-    <h4>Uh Oh. Looks like we don't have any new articles.</h4>
+    <h4>Oops!  Would you believe we are out of articles today???</h4>
   </div>
   <div class="card">
     <div class="card-header text-center">
-      <h3>What Would You Like To Do?</h3>
+      <h3>Preposterous right?  Well What Would You Like To Do in this time of Quarantine?</h3>
     </div>
     <div class="card-body text-center">
       <h4>
-        <a class="scrape-new">Try Scraping New Articles</a>
+        <a class="scrape-new">Hey how about, Try Scraping New Articles</a>
       </h4>
       <h4>
         <a href="/saved">Go to Saved Articles</a>
